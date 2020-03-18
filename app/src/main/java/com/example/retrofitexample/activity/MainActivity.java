@@ -1,6 +1,7 @@
 package com.example.retrofitexample.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -41,7 +42,10 @@ public class MainActivity extends AppCompatActivity {
 
         recyclerView =findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(getApplicationContext(),1);
+        gridLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL); // set Horizontal Orientation
+
+            recyclerView.setLayoutManager(gridLayoutManager);
 
 //
 //        listItems = new ArrayList<>();
